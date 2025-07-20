@@ -123,34 +123,47 @@
   </header>
 
   <div class="timer-banner">
-    Faltam <span id="dias">00</span> Dias <span id="horas">00</span> Horas <span id="minutos">00</span> Minutos <span id="segundos">00</span> Segundos</br>
-🔥 <span id="lideres">9</span> líderes já confirmados! Garanta sua vaga</br>
-  </div>
+  Faltam <span id="dias">00</span> Dias <span id="horas">00</span> Horas 
+  <span id="minutos">00</span> Minutos <span id="segundos">00</span> Segundos<br/>
+  🔥 <span id="lideres">9</span> líderes já confirmados! Garanta sua vaga<br/>
+</div>
 
-  <script>
-    const deadline = new Date().getTime() + 72 * 60 * 60 * 1000;
-    const diasEl = document.getElementById("dias");
-    const horasEl = document.getElementById("horas");
-    const minutosEl = document.getElementById("minutos");
-    const segundosEl = document.getElementById("segundos");
+<script>
+  // Define a data final: 3 de setembro às 23h59m59s (formato ISO)
+  const deadline = new Date("2025-09-03T23:59:59").getTime();
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const t = deadline - now;
+  const diasEl = document.getElementById("dias");
+  const horasEl = document.getElementById("horas");
+  const minutosEl = document.getElementById("minutos");
+  const segundosEl = document.getElementById("segundos");
 
-      const dias = Math.floor(t / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((t % (1000 * 60)) / 1000);
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const t = deadline - now;
 
-      diasEl.textContent = dias.toString().padStart(2, '0');
-      horasEl.textContent = horas.toString().padStart(2, '0');
-      minutosEl.textContent = minutos.toString().padStart(2, '0');
-      segundosEl.textContent = segundos.toString().padStart(2, '0');
+    if (t < 0) {
+      // Se passou da data, zera o contador
+      diasEl.textContent = "00";
+      horasEl.textContent = "00";
+      minutosEl.textContent = "00";
+      segundosEl.textContent = "00";
+      return;
     }
 
-    setInterval(updateCountdown, 1000);
-  </script>
+    const dias = Math.floor(t / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((t % (1000 * 60)) / 1000);
+
+    diasEl.textContent = dias.toString().padStart(2, '0');
+    horasEl.textContent = horas.toString().padStart(2, '0');
+    minutosEl.textContent = minutos.toString().padStart(2, '0');
+    segundosEl.textContent = segundos.toString().padStart(2, '0');
+  }
+
+  updateCountdown(); // Atualiza imediatamente ao carregar
+  setInterval(updateCountdown, 1000); // Atualiza a cada segundo
+</script>
 
 <section class="section" style="background: #f2f2f2; padding: 60px 20px; text-align: center;">
   <h2 style="color: #003366; margin-bottom: 20px;">Assista Agora: O Poder do Método E.S.S.Ê.N.C.I.A.™</h2>
@@ -219,7 +232,7 @@
 
   <!-- Dia 1 --></br>
   <div style="..."> <!-- (mantém estrutura HTML anterior com estilo gráfico) -->
-    <div style="..."><b>Dia 1 – 13/08/2025</b></div></br>
+    <div style="..."><b>Dia 1 – 03/09/2025</b></div></br>
     <div style="...">
       <p><strong>18:30</strong> | Acolhida e Boas-vindas</p>
       <p><strong>18:50</strong> | Pilar E – Essência e Identidade</p>
@@ -234,7 +247,7 @@
 
   <!-- Dia 2 --></br>
   <div style="...">
-    <div style="..."><b>Dia 2 – 14/08/2025</b></div></br>
+    <div style="..."><b>Dia 2 – 04/09/2025</b></div></br>
     <div style="...">
       <p><strong>18:30</strong> | Reabertura e Conexão</p>
       <p><strong>18:50</strong> | Pilar N – Necessidade de Mercado</p>
@@ -278,6 +291,35 @@
 </section>
 
 
+<section class="section" style="background: #ffffff; padding: 60px 20px; border-top: 4px solid #003366;">
+  <h2 style="text-align: center; color: #003366; font-size: 2.2em;">Convidados Especiais</h2>
+  <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; text-align: center; color: #444;">
+    Durante a imersão, você contará com a presença de líderes e especialistas convidados que trarão experiências reais de transformação, posicionamento e impacto. Prepare-se para insights que vão além da teoria!
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+    <!-- Convidado 1 -->
+    <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <img src="convidado1.jpg" alt="Sylvia Oliveira" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
+      <h3 style="color: #003366; margin-bottom: 5px;">Dra. Sylvia Oliveira</h3>
+      <p style="font-size: 0.95em; color: #555;">Médica e especialista em saúde mental corporativa, referência há mais de 30 anos na transformação de culturas organizacionais</p>
+    </div>
+
+    <!-- Convidado 2 -->
+    <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <img src="convidado2.jpg" alt="Alessandra Miura" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
+      <h3 style="color: #003366; margin-bottom: 5px;">Alessandra Miura</h3>
+      <p style="font-size: 0.95em; color: #555;">Especialista em liderança inovadora e humanizada a mais de 20 anos, reconhecida por alinhar estratégia, empatia e excelência na experiência de colaboradores e clientes.</p>
+    </div>
+
+    <!-- Convidado 3 -->
+    <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <img src="convidado3.jpg" alt="a definir" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
+      <h3 style="color: #003366; margin-bottom: 5px;">A definir</h3>
+      <p style="font-size: 0.95em; color: #555;">Consultora em Branding Pessoal e Marca Autêntica</p>
+    </div>
+  </div>
+</section>
 
 
   <section class="section">
