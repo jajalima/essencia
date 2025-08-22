@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Método E.S.S.Ê.N.C.I.A.™</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #fefefe;
+      color: #1e1e1e;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: white;
+    }
+    h1 {
+      color: #003366;
+      font-size: 2.2em;
+      text-align: center;
+    }
+    .produto {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .produto h2 {
+      color: #e67e00;
+      margin-top: 10px;
+    }
+    .beneficios {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    .beneficios ul {
+      list-style: none;
+      padding: 0;
+    }
+    .beneficios li {
+      margin: 10px 0;
+      font-size: 1.05em;
+      padding-left: 25px;
+      background: url('https://cdn-icons-png.flaticon.com/512/190/190411.png') no-repeat left center;
+      background-size: 18px;
+    }
+    .checkout-form {
+      margin-top: 20px;
+    }
+    .checkout-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+    .checkout-form input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .checkout-btn {
+      width: 100%;
+      background: #e67e00;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .garantia {
+      margin-top: 30px;
+      background: #d7f9dd;
+      padding: 20px;
+      border-left: 6px solid #2e7d32;
+      border-radius: 8px;
+      color: #2e7d32;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #003366;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Finalize sua inscrição no Método E.S.S.Ê.N.C.I.A.™</h1>
+
+    <div class="produto">
+      <img src="logoessencia2.png" alt="Logo Essência" width="80" />
+      <h2>Imersão Online – 2 Dias de Transformação</h2>
+      <p><strong>De R$ 997,00 por R$ 497,00 à vista ou 12x R$ 49,90</strong></p>
+    </div>
+
+    <div class="beneficios">
+      <h3>O que você receberá:</h3>
+      <ul>
+        <li>Participação completa na Imersão ao vivo</li>
+        <li>Material digital exclusivo + Diário da Essência</li>
+        <li>3 Bônus Premium</li>
+        <li>Grupo fechado com o autor</li>
+        <li>Acesso à gravação por 7 dias</li>
+      </ul>
+    </div>
+
+    <form class="checkout-form">
+      <label for="nome">Nome Completo</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="cpf">CPF</label>
+      <input type="text" id="cpf" name="cpf" required>
+
+      <label for="cartao">Número do Cartão</label>
+      <input type="text" id="cartao" name="cartao" required>
+
+      <label for="validade">Validade (MM/AA)</label>
+      <input type="text" id="validade" name="validade" required>
+
+      <label for="cvv">Código de Segurança (CVV)</label>
+      <input type="text" id="cvv" name="cvv" required>
+
+      <button type="submit" class="checkout-btn">Garantir Minha Vaga Agora</button>
+    </form>
+
+    <div class="garantia">
+      <strong>Garantia incondicional de 7 dias:</strong> se por qualquer motivo você não se sentir satisfeito com a experiência, basta nos avisar que devolveremos 100% do seu investimento.
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 - Método E.S.S.Ê.N.C.I.A.® • Criado por Jailson Lima</p>
+  </footer>
+</body>
+</html>

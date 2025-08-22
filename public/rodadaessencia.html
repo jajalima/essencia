@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Roda da Essência</title>
+
+  <script src=https://cdn.jsdelivr.net/npm/chart.js></script>
+
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js></script>
+
+  <style>
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      background: #f4f4f4;
+
+      padding: 20px;
+
+      color: #333;
+
+      text-align: center;
+
+    }
+
+    .container {
+
+      max-width: 800px;
+
+      margin: auto;
+
+      background: white;
+
+      padding: 20px;
+
+      border-radius: 10px;
+
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    }
+
+    label {
+
+      display: block;
+
+      margin-top: 15px;
+
+      font-weight: bold;
+
+      text-align: left;
+
+    }
+
+    input[type="range"] {
+
+      width: 100%;
+
+    }
+
+    canvas, img.chart {
+
+      margin: 30px auto;
+
+      width: 700px;
+
+      height: 700px;
+
+      display: block;
+
+    }
+
+    button {
+
+      margin: 15px 5px 0 5px;
+
+      background-color: #00754a;
+
+      color: white;
+
+      padding: 10px 18px;
+
+      border: none;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      font-size: 15px;
+
+    }
+
+    .resumo {
+
+      margin-top: 20px;
+
+      font-size: 15px;
+
+      text-align: left;
+
+    }
+
+    .logo {
+
+      width: 200px;
+
+      margin: 0 auto 20px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>Roda da Essência – Avaliação Interativa</h2>
+
+    <label for="nome">Nome completo do mentorado:</label>
+
+    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+
+ 
+
+    <div id="sliders"></div>
+
+    <button onclick="gerarGrafico()">Gerar Roda da Essência</button>
+
+  </div>
+
+ 
+
+  <div id="resultado" style="margin-top: 50px; display:none;" class="container">
+
+    <img src=https://metodoessencia.netlify.app/logoessencia2.png alt="Logotipo" class="logo" id="logoResult" style="max-width: 80px; margin-bottom: 80px;"> <!-- substitua "logo.png" pelo seu arquivo real -->
+
+    <h3 id="tituloGrafico"></h3>
+
+    <canvas id="rodaChart" width="700" height="700"></canvas>
+
+    <img id="chartImg" class="chart" style="display:none;" />
+
+    <div class="resumo" id="resumoTexto"></div>
+
+    <div>
+
+      <button onclick="gerarPDF()">📄 Baixar PDF com Resultados</button>
+
+ 
+
+      <button onclick="window.print()">🖨️ Imprimir Resultados</button>
+
+ 
+
+<a href=https://metodoessencia.netlify.app/ target="_blank"
+
+   style="display: inline-block; margin-top: 20px; background-color: #2f80ed; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-size: 16px; font-weight: bold;">
+
+   🚀 Quero Aprofundar com o Método Essência
+
+</a>
+
+ 
+
+    </div>
+
+  </div>
+
+ 
+
+  <script>
+
+    const pilares = [
+
+      "Comunicação de Impacto",
+
+      "Liderança com Propósito",
+
+      "Fé & Espiritualidade",
+
+      "Autoridade Técnica",
+
+      "Presença Digital",
+
+      "Posicionamento de Marca",
+
+      "Relacionamento & Empatia",
+
+      "Clareza de Produtos"
+
+    ];
+
+ 
+
+    const slidersDiv = document.getElementById("sliders");
+
+ 
+
+ 
+
+    const descricoes = [
+
+  "Sua habilidade de se comunicar com clareza, impacto e persuasão, especialmente em ambientes profissionais.",
+
+  "Seu compromisso com um propósito maior que guia suas ações e decisões como líder.",
+
+  "Sua conexão com seus valores espirituais e como isso influencia sua vida e liderança.",
+
+  "Sua reputação como especialista e o reconhecimento de sua capacidade técnica no seu campo de atuação.",
+
+  "Sua presença, consistência e autenticidade nas redes sociais e plataformas digitais.",
+
+  "Quão bem seu posicionamento público reflete sua essência, valores e diferencial.",
+
+  "Sua capacidade de se conectar genuinamente com as pessoas, demonstrando empatia e construindo relações.",
+
+  "Clareza na estrutura dos seus produtos, serviços ou soluções: nomes, formatos, benefícios e diferenciais."
+
+];
+
+ 
+
+pilares.forEach((pilar, i) => {
+
+  const div = document.createElement("div");
+
+  div.innerHTML = `
+
+    <label>${pilar}: <span id="val${i}">5</span></label>
+
+    <input type="range" id="p${i}" min="1" max="10" value="5"
+
+      oninput="document.getElementById('val${i}').innerText = this.value">
+
+    <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">${descricoes[i]}</p>
+
+  `;
+
+  slidersDiv.appendChild(div);
+
+});
+
+ 
+
+ 
+
+ 
+
+    let chartInstance;
+
+ 
+
+    function gerarGrafico() {
+
+      const nome = document.getElementById("nome").value.trim();
+
+      if (!nome) {
+
+        alert("Por favor, informe o nome completo do mentorado.");
+
+        return;
+
+      }
+
+ 
+
+      const notas = pilares.map((_, i) => parseInt(document.getElementById(`p${i}`).value));
+
+      const fortes = [], desenvolvimento = [], criticas = [];
+
+      notas.forEach((n, i) => {
+
+        if (n >= 8) fortes.push(pilares[i]);
+
+        else if (n <= 6 && n >= 4) desenvolvimento.push(pilares[i]);
+
+        else if (n < 4) criticas.push(pilares[i]);
+
+      });
+
+ 
+
+      document.getElementById("tituloGrafico").innerText = `Roda da Essência – ${nome}`;
+
+      document.getElementById("resumoTexto").innerHTML = `
+
+        <h4>Resumo do Perfil</h4>
+
+        <p><strong>Pilares Fortes:</strong> ${fortes.join(", ") || "Nenhum"}</p>
+
+        <p><strong>Áreas em Desenvolvimento:</strong> ${desenvolvimento.join(", ") || "Nenhuma"}</p>
+
+        <p><strong>Áreas Críticas:</strong> ${criticas.join(", ") || "Nenhuma"}</p>
+
+      `;
+
+ 
+
+      const ctx = document.getElementById("rodaChart").getContext("2d");
+
+      if (chartInstance) chartInstance.destroy();
+
+ 
+
+      chartInstance = new Chart(ctx, {
+
+        type: "radar",
+
+        data: {
+
+          labels: pilares,
+
+          datasets: [{
+
+            label: "Perfil Atual",
+
+            data: notas,
+
+            backgroundColor: "rgba(0, 117, 74, 0.2)",
+
+            borderColor: "#00754a",
+
+            borderWidth: 2,
+
+            pointBackgroundColor: "#00754a"
+
+          }]
+
+        },
+
+        options: {
+
+          responsive: false,
+
+          scales: {
+
+            r: {
+
+              min: 0,
+
+              max: 10,
+
+              ticks: { stepSize: 1 }
+
+            }
+
+          },
+
+          plugins: {
+
+            legend: { display: false }
+
+          }
+
+        }
+
+      });
+
+ 
+
+      setTimeout(() => {
+
+        const imgURL = document.getElementById("rodaChart").toDataURL("image/png", 1.0);
+
+        const chartImg = document.getElementById("chartImg");
+
+        chartImg.src = imgURL;
+
+        chartImg.style.display = 'none';
+
+      }, 300);
+
+ 
+
+      document.getElementById("resultado").style.display = "block";
+
+    }
+
+ 
+
+    function gerarPDF() {
+
+      const canvas = document.getElementById("rodaChart");
+
+      const imgData = canvas.toDataURL("image/png", 1.0);
+
+      const chartImg = document.getElementById("chartImg");
+
+      chartImg.src = imgData;
+
+      chartImg.style.display = 'block';
+
+      canvas.style.display = 'none';
+
+ 
+
+      const resultado = document.getElementById("resultado");
+
+ 
+
+      html2pdf().set({
+
+        margin: 10,
+
+        filename: 'Roda_da_Essencia.pdf',
+
+        image: { type: 'jpeg', quality: 1 },
+
+        html2canvas: { scale: 4 },
+
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+
+      })
+
+      .from(resultado)
+
+      .save()
+
+      .then(() => {
+
+        chartImg.style.display = 'none';
+
+        canvas.style.display = 'block';
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>

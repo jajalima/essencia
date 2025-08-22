@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico E.S.S.Ê.N.C.I.A.®</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f2;
+      color: #003366;
+      padding: 20px;
+      margin: 0;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      color: #003366;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 10px;
+      font-weight: bold;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #0072ce;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 30px;
+      background-color: #e6f9f0;
+      padding: 20px;
+      border-left: 6px solid #28a745;
+      border-radius: 8px;
+    }
+  </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <img src="essencia.png" alt="Logo Essência" width="150"/>
+    <h1>Diagnóstico de Perfil E.S.S.Ê.N.C.I.A.®</h1>
+    <p>Descubra como está o alinhamento entre sua identidade e sua liderança.</p>
+  </header>
+
+  <div class="container">
+    <label for="nome">Seu nome:</label>
+    <input type="text" id="nome" required placeholder="Digite seu nome completo" />
+
+    <label>1. Você sente clareza sobre sua identidade como líder?</label>
+    <select id="p1">
+      <option value="baixo">Pouca</option>
+      <option value="médio">Razoável</option>
+      <option value="alto">Muito clara</option>
+    </select>
+
+    <label>2. Seu repertório de soft skills é bem desenvolvido?</label>
+    <select id="p2">
+      <option value="baixo">Precisa melhorar</option>
+      <option value="médio">Na média</option>
+      <option value="alto">Muito desenvolvido</option>
+    </select>
+
+    <label>3. Como você avalia suas habilidades técnicas para a função?</label>
+    <select id="p3">
+      <option value="baixo">Limitadas</option>
+      <option value="médio">Suficientes</option>
+      <option value="alto">Excelentes</option>
+    </select>
+
+    <label>4. Você se comunica com clareza, influência e intenção?</label>
+    <select id="p4">
+      <option value="baixo">Precisa evoluir</option>
+      <option value="médio">Razoável</option>
+      <option value="alto">Excelente</option>
+    </select>
+
+    <label>5. Você conhece e atende às reais necessidades do mercado?</label>
+    <select id="p5">
+      <option value="baixo">Não muito</option>
+      <option value="médio">Mais ou menos</option>
+      <option value="alto">Com precisão</option>
+    </select>
+
+    <label>6. Sua proposta profissional está clara e atrativa?</label>
+    <select id="p6">
+      <option value="baixo">Não consigo definir</option>
+      <option value="médio">Em construção</option>
+      <option value="alto">Muito clara</option>
+    </select>
+
+    <label>7. Seu posicionamento visual e marca pessoal estão bem definidos?</label>
+    <select id="p7">
+      <option value="baixo">Precisa de ajustes</option>
+      <option value="médio">Mediano</option>
+      <option value="alto">Bem posicionados</option>
+    </select>
+
+    <label>8. Você age com consistência e tem um plano prático de evolução?</label>
+    <select id="p8">
+      <option value="baixo">Não</option>
+      <option value="médio">Algumas vezes</option>
+      <option value="alto">Sim, com clareza</option>
+    </select>
+
+    <button onclick="gerarDiagnostico()">Gerar Diagnóstico</button><P>
+
+      <div id="resultado" class="result" style="display:none;"></div>
+
+    <section style="background-color: #f5f5f5; padding: 60px 20px; text-align: center; font-family: Arial, sans-serif;">
+      <img src="essencia.png" alt="Logotipo Essência" style="max-width: 180px; margin-bottom: 30px;"/>
+
+      <h2 style="color: #003366; font-size: 2em; margin-bottom: 10px;">Seu Diagnóstico Está Pronto!</h2>
+      <p style="font-size: 1.1em; max-width: 700px; margin: 0 auto 30px; color: #444;">
+        Parabéns por completar sua jornada inicial com o Método E.S.S.Ê.N.C.I.A.®. Agora, dê o próximo passo com clareza e estratégia.
+      </p>
+
+    <button onclick="gerarPDF()" style="background-color: #00754a; color: white; padding: 14px 30px; border-radius: 6px; font-size: 1.1em; font-weight: bold; margin: 10px; border: none; cursor: pointer;">
+  📥 Baixar Relatório Personalizado (PDF)
+</button>
+
+
+
+
+
+
+
+
+
+
+<br><p>
+
+      <div style="margin: 20px 0;">
+        <a href="https://calendly.com/jailsonlima/30min" target="_blank"
+          style="background-color: #2f80ed; color: white; padding: 14px 30px; border-radius: 6px; text-decoration: none; font-size: 1.1em; font-weight: bold;">
+          📅 Agendar Sessão de Mentoria
+        </a>
+      </div>
+<p>
+
+<div style="text-align:center; margin-top: 40px;">
+        <img src="qrcodeessencia.png" style="max-width: 140px;" />
+        <p style="font-size: 0.9em; color: #888;">Escaneie para saber mais sobre o Método E.S.S.Ê.N.C.I.A.®</p>
+      </div>
+
+      <p style="color: #888; font-size: 0.9em; margin-top: 30px;">
+        *Você pode revisitar seu relatório a qualquer momento ou compartilhá-lo com seu mentor.
+      </p>
+    </section>
+
+
+
+  </div>
+
+  <script>
+    function gerarDiagnostico() {
+      const nome = document.getElementById("nome").value;
+      if (!nome) {
+        alert("Por favor, preencha seu nome.");
+        return;
+      }
+
+      const respostas = [
+        p1.value, p2.value, p3.value, p4.value,
+        p5.value, p6.value, p7.value, p8.value
+      ];
+
+      const pontos = respostas.map(res => res === "alto" ? 3 : res === "médio" ? 2 : 1);
+      const total = pontos.reduce((a, b) => a + b, 0);
+
+      let mensagem = "";
+
+      if (total >= 20) {
+        mensagem = `Parabéns, ${nome}! Seu perfil demonstra um alto grau de clareza, posicionamento e ação estratégica. Continue desenvolvendo com consistência!`;
+      } else if (total >= 14) {
+        mensagem = `${nome}, você já tem uma boa base de liderança, mas pode fortalecer sua identidade, proposta e plano de ação. Vamos evoluir juntos!`;
+      } else {
+        mensagem = `${nome}, há uma grande oportunidade de redescoberta da sua liderança. O Método E.S.S.Ê.N.C.I.A.® pode ser o ponto de virada que você precisa.`;
+      }
+
+      const resultBox = document.getElementById("resultado");
+      resultBox.innerText = mensagem;
+      resultBox.style.display = "block";
+    }
+
+  </script>
+
+
+<script>
+  async function gerarPDF() {
+    const nome = document.getElementById("nome").value || "Líder";
+
+    const perguntas = [
+      "1. Você sente clareza sobre sua identidade como líder?",
+      "2. Seu repertório de soft skills é bem desenvolvido?",
+      "3. Como você avalia suas habilidades técnicas para a função?",
+      "4. Você se comunica com clareza, influência e intenção?",
+      "5. Você conhece e atende às reais necessidades do mercado?",
+      "6. Sua proposta profissional está clara e atrativa?",
+      "7. Seu posicionamento visual e marca pessoal estão bem definidos?",
+      "8. Você age com consistência e tem um plano prático de evolução?"
+    ];
+
+    const respostas = [
+      document.getElementById("p1").value,
+      document.getElementById("p2").value,
+      document.getElementById("p3").value,
+      document.getElementById("p4").value,
+      document.getElementById("p5").value,
+      document.getElementById("p6").value,
+      document.getElementById("p7").value,
+      document.getElementById("p8").value
+    ];
+
+    const pontuacoes = respostas.map(r => r === "alto" ? 3 : r === "médio" ? 2 : 1);
+    const total = pontuacoes.reduce((a, b) => a + b, 0);
+
+    let mensagem = "";
+    if (total >= 20) {
+      mensagem = `Parabéns, ${nome}! Seu perfil demonstra um alto grau de clareza, posicionamento e ação estratégica. Continue desenvolvendo com consistência!`;
+    } else if (total >= 14) {
+      mensagem = `${nome}, você já tem uma boa base de liderança, mas pode fortalecer sua identidade, proposta e plano de ação. Vamos evoluir juntos!`;
+    } else {
+      mensagem = `${nome}, há uma grande oportunidade de redescoberta da sua liderança. O Método E.S.S.Ê.N.C.I.A.® pode ser o ponto de virada que você precisa.`;
+    }
+
+    // Geração do PDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.text("Relatório Diagnóstico – Método E.S.S.Ê.N.C.I.A.®", 20, 20);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.text(`Nome do Avaliado: ${nome}`, 20, 30);
+    doc.text(`Pontuação Total: ${total} pontos`, 20, 38);
+    doc.text("Detalhamento das respostas:", 20, 46);
+
+    let y = 56;
+    for (let i = 0; i < perguntas.length; i++) {
+      doc.setFont("helvetica", "bold");
+      doc.text(`${perguntas[i]}`, 20, y);
+      y += 6;
+      doc.setFont("helvetica", "normal");
+      doc.text(`Resposta: ${respostas[i]} | Pontuação: ${pontuacoes[i]}`, 25, y);
+      y += 10;
+      if (y > 270) {
+        doc.addPage();
+        y = 20;
+      }
+    }
+
+    doc.setFont("helvetica", "bold");
+    doc.text("Diagnóstico Final:", 20, y);
+    y += 8;
+
+    doc.setFont("helvetica", "normal");
+    const msgQuebrada = doc.splitTextToSize(mensagem, 170);
+    doc.text(msgQuebrada, 20, y);
+
+
+    // Nome do arquivo
+    const nomeArquivo = `Relatorio_Diagnostico_ESSENCIA_${nome.replace(/ /g, "_")}.pdf`;
+    doc.save(nomeArquivo);
+  }
+</script>
+
+
+
+</body>
+</html>
