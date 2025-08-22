@@ -1,527 +1,343 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Método E.S.S.Ê.N.C.I.A.™ | Transforme sua Liderança Autêntica</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #1e1e1e;
-    }
-    header {
-      background: linear-gradient(135deg, #003366, #005599);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.3em;
-      margin: 20px 0;
-    }
-    .btn-cta {
-      background: #ffcc00;
-      color: #1e1e1e;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      margin-top: 20px;
-      display: inline-block;
-    }
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h2 {
-      font-size: 2em;
-      color: #003366;
-      margin-bottom: 20px;
-    }
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .pillar {
-      background: white;
-      padding: 20px;
-      border-left: 6px solid #005599;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    .pillar h3 {
-      margin-top: 0;
-      color: #005599;
-    }
-    .sobre-autor {
-      background: #fff;
-      padding: 40px 20px;
-      border-top: 4px solid #005599;
-      border-bottom: 4px solid #005599;
-      margin-top: 60px;
-      text-align: center;
-    }
-    .sobre-autor img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    .timer-banner {
-      background: linear-gradient(to right, #eda923, #f6420b);
-      padding: 20px;
-      color: white;
-      font-size: 1.5em;
-      font-weight: bold;
-      text-align: center;
-    }
-    .timer-banner span {
-      margin: 0 5px;
-    }
-    .agenda-box {
-      background: linear-gradient(to bottom, #ffcc00, #ff6600);
-      padding: 30px;
-      color: black;
-      border-radius: 10px;
-      margin-top: 40px;
-    }
-    .paraquem {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 40px;
-    }
-    .paraquem div {
-      background: linear-gradient(to right, #ffcc00, #ff6600);
-      padding: 20px;
-      border-radius: 10px;
-      margin: 10px;
-      width: 280px;
-      font-weight: bold;
-      text-align: center;
-    }
+    body { font-family: 'Montserrat', sans-serif; margin: 0; background: #f9f9f9; color: #1e1e1e; }
+    header { background: linear-gradient(135deg, #003366, #005599); color: white; padding: 60px 20px; text-align: center; }
+    header h1 { font-size: 3em; margin: 0; display:flex; align-items:center; gap:12px; justify-content:center; }
+    header h1 img { width: 48px; height: 48px; object-fit: contain; }
+    header p { font-size: 1.3em; margin: 20px 0; }
+    .btn-cta { background: #ffcc00; color: #1e1e1e; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 20px; display: inline-block; }
+    .section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    .section h2 { font-size: 2em; color: #003366; margin-bottom: 20px; }
+    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .pillar { background: white; padding: 20px; border-left: 6px solid #005599; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+    .pillar h3 { margin-top: 0; color: #005599; }
+    .sobre-autor { background: #fff; padding: 40px 20px; border-top: 4px solid #005599; border-bottom: 4px solid #005599; margin-top: 60px; text-align: center; }
+    .sobre-autor img { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; margin-bottom: 20px; }
+    .timer-banner { background: linear-gradient(to right, #eda923, #f6420b); padding: 20px; color: white; font-size: 1.5em; font-weight: bold; text-align: center; }
+    .timer-banner span { margin: 0 5px; }
+    .agenda-box { background: linear-gradient(to bottom, #ffcc00, #ff6600); padding: 30px; color: black; border-radius: 10px; margin-top: 40px; }
+    .paraquem { display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 40px; }
+    .paraquem div { background: linear-gradient(to right, #ffcc00, #ff6600); padding: 20px; border-radius: 10px; margin: 10px; width: 280px; font-weight: bold; text-align: center; }
+    footer { text-align:center; padding:30px; background:#003366; color:white; }
   </style>
 </head>
 <body>
+
   <header>
-    <h1><img src="logoessencia2.png" width="5%" height="5%" alt="logo Essencia"> </img> Método E.S.S.Ê.N.C.I.A.™</h1>
+    <h1>
+      <img src="/logoessencia2.png" alt="Logo Essência" />
+      Método E.S.S.Ê.N.C.I.A.™
+    </h1>
     <p>O E.S.S.Ê.N.C.I.A.™ transforma profissionais comuns em líderes inconfundíveis, por meio de clareza, reposicionamento e um plano de ação que alinha identidade, propósito e performance.</p>
-
-<a href="#inscricao" class="btn-cta">Quero Despertar Minha Liderança! </a>  
-
+    <a href="#inscricao" class="btn-cta">Quero Despertar Minha Liderança!</a>
   </header>
 
+  <!-- Banner do contador -->
   <div class="timer-banner">
-  Faltam <span id="dias">00</span> Dias <span id="horas">00</span> Horas 
-  <span id="minutos">00</span> Minutos <span id="segundos">00</span> Segundos<br/>
-  🔥 <span id="lideres">9</span> líderes já confirmados! Garanta sua vaga<br/>
-</div>
-
-<script>
-  // Define a data final: 3 de setembro às 23h59m59s (formato ISO)
-  const deadline = new Date("2025-09-03T23:59:59").getTime();
-
-  const diasEl = document.getElementById("dias");
-  const horasEl = document.getElementById("horas");
-  const minutosEl = document.getElementById("minutos");
-  const segundosEl = document.getElementById("segundos");
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const t = deadline - now;
-
-    if (t < 0) {
-      // Se passou da data, zera o contador
-      diasEl.textContent = "00";
-      horasEl.textContent = "00";
-      minutosEl.textContent = "00";
-      segundosEl.textContent = "00";
-      return;
-    }
-
-    const dias = Math.floor(t / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((t % (1000 * 60)) / 1000);
-
-    diasEl.textContent = dias.toString().padStart(2, '0');
-    horasEl.textContent = horas.toString().padStart(2, '0');
-    minutosEl.textContent = minutos.toString().padStart(2, '0');
-    segundosEl.textContent = segundos.toString().padStart(2, '0');
-  }
-
-  updateCountdown(); // Atualiza imediatamente ao carregar
-  setInterval(updateCountdown, 1000); // Atualiza a cada segundo
-</script>
-
-<section class="section" style="background: #f2f2f2; padding: 60px 20px; text-align: center;">
-  <h2 style="color: #003366; margin-bottom: 20px;">Assista Agora: O Poder do Método E.S.S.Ê.N.C.I.A.™</h2>
-  <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1em;">
-    Entenda em detalhes como essa metodologia pode transformar sua forma de liderar, engajar e impactar — sem fórmulas genéricas, com identidade e verdade.
-  </p>
-
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-    <iframe
-      src="https://www.youtube.com/embed/IMRCGPXJTo0?controls=0&modestbranding=1&rel=0&disablekb=1"
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      oncontextmenu="return false"
-    ></iframe>
+    Faltam <span id="dias">00</span> Dias <span id="horas">00</span> Horas
+    <span id="minutos">00</span> Minutos <span id="segundos">00</span> Segundos<br/>
+    🔥 <span id="lideres">9</span> líderes já confirmados! Garanta sua vaga
   </div>
-</section>
 
-<script>
-  // Impede clique com o botão direito em toda a área de vídeo
-  document.addEventListener('DOMContentLoaded', () => {
-    const videoFrame = document.querySelector('iframe');
-    videoFrame.contentWindow.document.oncontextmenu = () => false;
-  });
-</script>
+  <!-- Vídeo -->
+  <section class="section" style="background: #f2f2f2; padding: 60px 20px; text-align: center;">
+    <h2 style="color: #003366; margin-bottom: 20px;">Assista Agora: O Poder do Método E.S.S.Ê.N.C.I.A.™</h2>
+    <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1em;">
+      Entenda em detalhes como essa metodologia pode transformar sua forma de liderar, engajar e impactar — sem fórmulas genéricas, com identidade e verdade.
+    </p>
 
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" oncontextmenu="return false">
+      <iframe
+        src="https://www.youtube.com/embed/IMRCGPXJTo0?controls=0&modestbranding=1&rel=0&disablekb=1"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
 
-<section class="section" style="background: #ffffff; padding: 60px 20px; border-top: 4px solid #005599;">
-  <h2 style="color: #003366; text-align: center; margin-bottom: 40px;">Como nasceu o Método E.S.S.Ê.N.C.I.A.™</h2>
-  <p style="max-width: 800px; margin: auto; font-size: 1.1em; line-height: 1.8;">
-    Depois de mais de 18 anos atuando entre a gestão de tecnologia, liderança organizacional e o desenvolvimento humano, percebi um padrão que se repetia silenciosamente nas empresas: líderes altamente técnicos, mas emocionalmente distantes; ou carismáticos, mas sem clareza de identidade, propósito e impacto real.
-  </p>
-  <p style="max-width: 800px; margin: 20px auto; font-size: 1.1em; line-height: 1.8;">
-    Durante muito tempo, eu mesmo enfrentei esse desafio. Conciliar resultados com autenticidade, técnica com humanidade, estratégia com identidade, parecia uma equação impossível. A pressão por performance e a ausência de um caminho estruturado deixavam líderes confusos e esgotados.
-  </p>
-  <p style="max-width: 800px; margin: 20px auto; font-size: 1.1em; line-height: 1.8;">
-    Foi nesse cenário que nasceu a inquietação. Comecei a estudar padrões de liderança transformadora, inteligência emocional, branding pessoal e inovação estratégica. Testei ferramentas, adaptei modelos, ouvi líderes e criei conexões práticas entre o autoconhecimento e o posicionamento de autoridade.
-  </p>
-  <p style="max-width: 800px; margin: 20px auto; font-size: 1.1em; line-height: 1.8;">
-    E assim, após anos de testes, erros, avanços e descobertas, nasceu o <strong>Método E.S.S.Ê.N.C.I.A.™</strong>: uma jornada em 8 pilares que unem clareza, estratégia e identidade para que líderes e profissionais consigam despertar o seu máximo potencial, com autenticidade e impacto real.
-  </p>
-  <p style="max-width: 800px; margin: 20px auto 0; font-size: 1.1em; line-height: 1.8; text-align: center; font-weight: bold;">
-    Hoje, o método não é apenas uma metodologia. É um movimento. Um chamado para liderar com verdade, visão e valor.
-  </p>
-</section>
- 
+  <!-- História -->
+  <section class="section" style="background: #ffffff; padding: 60px 20px; border-top: 4px solid #005599;">
+    <h2 style="color: #003366; text-align: center; margin-bottom: 40px;">Como nasceu o Método E.S.S.Ê.N.C.I.A.™</h2>
+    <p style="max-width: 800px; margin: auto; font-size: 1.1em; line-height: 1.8;">
+      Depois de mais de 18 anos atuando entre a gestão de tecnologia, liderança organizacional e o desenvolvimento humano, percebi um padrão que se repetia silenciosamente nas empresas: líderes altamente técnicos, mas emocionalmente distantes; ou carismáticos, mas sem clareza de identidade, propósito e impacto real.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto; font-size: 1.1em; line-height: 1.8;">
+      Durante muito tempo, eu mesmo enfrentei esse desafio. Conciliar resultados com autenticidade, técnica com humanidade, estratégia com identidade, parecia uma equação impossível. A pressão por performance e a ausência de um caminho estruturado deixavam líderes confusos e esgotados.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto; font-size: 1.1em; line-height: 1.8;">
+      Foi nesse cenário que nasceu a inquietação. Comecei a estudar padrões de liderança transformadora, inteligência emocional, branding pessoal e inovação estratégica. Testei ferramentas, adaptei modelos, ouvi líderes e criei conexões práticas entre o autoconhecimento e o posicionamento de autoridade.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto; font-size: 1.1em; line-height: 1.8;">
+      E assim, após anos de testes, erros, avanços e descobertas, nasceu o <strong>Método E.S.S.Ê.N.C.I.A.™</strong>: uma jornada em 8 pilares que unem clareza, estratégia e identidade para que líderes e profissionais consigam despertar o seu máximo potencial, com autenticidade e impacto real.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto 0; font-size: 1.1em; line-height: 1.8; text-align: center; font-weight: bold;">
+      Hoje, o método não é apenas uma metodologia. É um movimento. Um chamado para liderar com verdade, visão e valor.
+    </p>
+  </section>
 
+  <!-- Pilares -->
   <section class="section">
-  <h2>Os 8 Pilares da Liderança com Essência</h2>
-  <div class="pillars">
-    <div class="pillar"><h3>E – Essência e Identidade</h3><p>Descubra quem você é como líder e alinhe sua missão e valores à sua jornada profissional.</p></div>
-    <div class="pillar"><h3>S – Soft Skills</h3><p>Desenvolva empatia, escuta ativa e inteligência emocional para liderar com humanidade e influência.</p></div>
-    <div class="pillar"><h3>S – Skills Técnicas</h3><p>Consolide sua autoridade com competências práticas que o diferenciam no mercado.</p></div>
-    <div class="pillar"><h3>Ê – Êxito de Comunicação</h3><p>Domine a arte de se comunicar com impacto, presença digital e clareza estratégica.</p></div>
-    <div class="pillar"><h3>N – Necessidade de Mercado</h3><p>Conecte sua proposta às dores reais do seu público e posicione-se como solução.</p></div>
-    <div class="pillar"><h3>C – Clareza de Proposta</h3><p>Crie ofertas irresistíveis e com propósito, sem perder a autenticidade.</p></div>
-    <div class="pillar"><h3>I – Imagem e Visual</h3><p>Construa uma marca pessoal forte, memorável e com identidade visual coerente.</p></div>
-    <div class="pillar"><h3>A – Ação e Posicionamento</h3><p>Implemente conteúdos e estratégias que gerem autoridade, valor e posicionamento real.</p></div>
-  </div>
-</section>
-
-<section style="padding: 40px 0; text-align: center;">
-  <h2 style="font-size: 2em; margin-bottom: 20px;">Imersão Exclusiva – Cronograma Estratégico</h2>
-  <p style="max-width: 800px; margin: auto; font-size: 1.1em;">Dois encontros online intensivos, que vão desbloquear sua liderança em apenas 8 horas.</p></br>
-
-  <!-- Dia 1 --></br>
-  <div style="..."> <!-- (mantém estrutura HTML anterior com estilo gráfico) -->
-    <div style="..."><b>Dia 1 – 03/09/2025</b></div></br>
-    <div style="...">
-      <p><strong>18:30</strong> | Acolhida e Boas-vindas</p>
-      <p><strong>18:50</strong> | Pilar E – Essência e Identidade</p>
-      <p><strong>19:30</strong> | Pilar S – Soft Skills</p>
-      <p><strong>20:10</strong> | Pilar S – Skills Técnicas</p>
-      <p><strong>20:40</strong> | Intervalo</p>
-      <p><strong>20:50</strong> | Pilar Ê – Êxito de Comunicação</p>
-      <p><strong>21:30</strong> | Roda de Conversa Estratégica</p>
-      <p><strong>22:00</strong> | Encerramento</p>
+    <h2>Os 8 Pilares da Liderança com Essência</h2>
+    <div class="pillars">
+      <div class="pillar"><h3>E – Essência e Identidade</h3><p>Descubra quem você é como líder e alinhe sua missão e valores à sua jornada profissional.</p></div>
+      <div class="pillar"><h3>S – Soft Skills</h3><p>Desenvolva empatia, escuta ativa e inteligência emocional para liderar com humanidade e influência.</p></div>
+      <div class="pillar"><h3>S – Skills Técnicas</h3><p>Consolide sua autoridade com competências práticas que o diferenciam no mercado.</p></div>
+      <div class="pillar"><h3>Ê – Êxito de Comunicação</h3><p>Domine a arte de se comunicar com impacto, presença digital e clareza estratégica.</p></div>
+      <div class="pillar"><h3>N – Necessidade de Mercado</h3><p>Conecte sua proposta às dores reais do seu público e posicione-se como solução.</p></div>
+      <div class="pillar"><h3>C – Clareza de Proposta</h3><p>Crie ofertas irresistíveis e com propósito, sem perder a autenticidade.</p></div>
+      <div class="pillar"><h3>I – Imagem e Visual</h3><p>Construa uma marca pessoal forte, memorável e com identidade visual coerente.</p></div>
+      <div class="pillar"><h3>A – Ação e Posicionamento</h3><p>Implemente conteúdos e estratégias que gerem autoridade, valor e posicionamento real.</p></div>
     </div>
-  </div>
+  </section>
 
-  <!-- Dia 2 --></br>
-  <div style="...">
-    <div style="..."><b>Dia 2 – 04/09/2025</b></div></br>
-    <div style="...">
-      <p><strong>18:30</strong> | Reabertura e Conexão</p>
-      <p><strong>18:50</strong> | Pilar N – Necessidade de Mercado</p>
-      <p><strong>19:20</strong> | Pilar C – Clareza de Proposta</p>
-      <p><strong>20:00</strong> | Pilar I – Imagem e Visual</p>
-      <p><strong>20:40</strong> | Intervalo</p>
-      <p><strong>20:50</strong> | Pilar A – Ação e Posicionamento</p>
-      <p><strong>21:30</strong> | Diagnóstico e Plano de Ação Personalizado</p>
-      <p><strong>22:00</strong> | Encerramento e Certificação</p>
-    </div>
-  </div>
-</section>
-<section class="section sobre-autor">
-  <img src="1746665229785.jpg" alt="Foto do Autor Jailson Lima" />
-  <h2>Sobre o Autor</h2>
+  <!-- Cronograma (limpo; sem "..." e sem </br>) -->
+  <section style="padding: 40px 0; text-align: center;">
+    <h2 style="font-size: 2em; margin-bottom: 20px;">Imersão Exclusiva – Cronograma Estratégico</h2>
+    <p style="max-width: 800px; margin: auto; font-size: 1.1em;">Dois encontros online intensivos, que vão desbloquear sua liderança em apenas 8 horas.</p>
 
-
-  <p>
-
-
-<strong>Jailson Lima</strong> é mentor, consultor e especialista em liderança, inovação e transformação organizacional com mais de 18 anos de experiência. Criador do método E.S.S.Ê.N.C.I.A.®, é também palestrante e coautor de obras em gestão e comportamento humano.</p>
-  <p>Siga: 
-    <a href="https://www.instagram.com/oficial.jailsonlima/" target="_blank">Instagram</a> | 
-    <a href="https://www.linkedin.com/in/jailsonlima/" target="_blank">LinkedIn</a>
-  </p>
-
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
-    <div style="text-align: center;">
-      <img src="gestao.png" alt="Livro Além das Barreiras" style="width:160px; height:auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-      <p style="font-weight: bold; margin-top: 10px;">Além das Barreiras<br/><span style="font-weight: normal;">2023</span></p>
-    </div>
-    <div style="text-align: center;">
-      <img src="gestao2.png" alt="Livro Gestão! Como Evoluir" style="width:160px; height:auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-      <p style="font-weight: bold; margin-top: 10px;">Gestão! Como Evoluir<br/><span style="font-weight: normal;">2024</span></p>
-    </div>
-    <div style="text-align: center;">
-      <img src="Logo_Jailson_Icone.png" alt="Próximo Livro" style="width:160px; height:auto;" />
-      <p style="font-weight: bold; margin-top: 10px;">Próxima Obra<br/><span style="font-weight: normal;">Em breve</span></p>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" style="background: #ffffff; padding: 60px 20px; border-top: 4px solid #003366;">
-  <h2 style="text-align: center; color: #003366; font-size: 2.2em;">Convidados Especiais</h2>
-  <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; text-align: center; color: #444;">
-    Durante a imersão, você contará com a presença de líderes e especialistas convidados que trarão experiências reais de transformação, posicionamento e impacto. Prepare-se para insights que vão além da teoria!
-  </p>
-
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
-    <!-- Convidado 1 -->
-    <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img src="convidado1.jpg" alt="Sylvia Oliveira" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
-      <h3 style="color: #003366; margin-bottom: 5px;">Dra. Sylvia Oliveira</h3>
-      <p style="font-size: 0.95em; color: #555;">Médica e especialista em saúde mental corporativa, referência há mais de 30 anos na transformação de culturas organizacionais</p>
+    <div class="agenda-box" style="max-width: 800px; margin: 24px auto;">
+      <div><b>Dia 1 – 03/09/2025</b></div>
+      <div style="margin-top:10px; text-align:left;">
+        <p><strong>18:30</strong> | Acolhida e Boas-vindas</p>
+        <p><strong>18:50</strong> | Pilar E – Essência e Identidade</p>
+        <p><strong>19:30</strong> | Pilar S – Soft Skills</p>
+        <p><strong>20:10</strong> | Pilar S – Skills Técnicas</p>
+        <p><strong>20:40</strong> | Intervalo</p>
+        <p><strong>20:50</strong> | Pilar Ê – Êxito de Comunicação</p>
+        <p><strong>21:30</strong> | Roda de Conversa Estratégica</p>
+        <p><strong>22:00</strong> | Encerramento</p>
+      </div>
     </div>
 
-    <!-- Convidado 2 -->
-    <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img src="convidado2.jpg" alt="Alessandra Miura" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
-      <h3 style="color: #003366; margin-bottom: 5px;">Alessandra Miura</h3>
-      <p style="font-size: 0.95em; color: #555;">Especialista em liderança inovadora e humanizada a mais de 20 anos, reconhecida por alinhar estratégia, empatia e excelência na experiência de colaboradores e clientes.</p>
+    <div class="agenda-box" style="max-width: 800px; margin: 24px auto;">
+      <div><b>Dia 2 – 04/09/2025</b></div>
+      <div style="margin-top:10px; text-align:left;">
+        <p><strong>18:30</strong> | Reabertura e Conexão</p>
+        <p><strong>18:50</strong> | Pilar N – Necessidade de Mercado</p>
+        <p><strong>19:20</strong> | Pilar C – Clareza de Proposta</p>
+        <p><strong>20:00</strong> | Pilar I – Imagem e Visual</p>
+        <p><strong>20:40</strong> | Intervalo</p>
+        <p><strong>20:50</strong> | Pilar A – Ação e Posicionamento</p>
+        <p><strong>21:30</strong> | Diagnóstico e Plano de Ação Personalizado</p>
+        <p><strong>22:00</strong> | Encerramento e Certificação</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Autor -->
+  <section class="section sobre-autor">
+    <img src="/1746665229785.jpg" alt="Foto do Autor Jailson Lima" />
+    <h2>Sobre o Autor</h2>
+    <p><strong>Jailson Lima</strong> é mentor, consultor e especialista em liderança, inovação e transformação organizacional com mais de 18 anos de experiência. Criador do método E.S.S.Ê.N.C.I.A.®, é também palestrante e coautor de obras em gestão e comportamento humano.</p>
+    <p>Siga:
+      <a href="https://www.instagram.com/oficial.jailsonlima/" target="_blank">Instagram</a> |
+      <a href="https://www.linkedin.com/in/jailsonlima/" target="_blank">LinkedIn</a>
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+      <div style="text-align: center;">
+        <img src="/gestao.png" alt="Livro Além das Barreiras" style="width:160px; height:auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        <p style="font-weight: bold; margin-top: 10px;">Além das Barreiras<br/><span style="font-weight: normal;">2023</span></p>
+      </div>
+      <div style="text-align: center;">
+        <img src="/gestao2.png" alt="Livro Gestão! Como Evoluir" style="width:160px; height:auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+        <p style="font-weight: bold; margin-top: 10px;">Gestão! Como Evoluir<br/><span style="font-weight: normal;">2024</span></p>
+      </div>
+      <div style="text-align: center;">
+        <img src="/Logo_Jailson_Icone.png" alt="Próxima Obra" style="width:160px; height:auto;" />
+        <p style="font-weight: bold; margin-top: 10px;">Próxima Obra<br/><span style="font-weight: normal;">Em breve</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Convidados -->
+  <section class="section" style="background: #ffffff; padding: 60px 20px; border-top: 4px solid #003366;">
+    <h2 style="text-align: center; color: #003366; font-size: 2.2em;">Convidados Especiais</h2>
+    <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; text-align: center; color: #444;">
+      Durante a imersão, você contará com a presença de líderes e especialistas convidados que trarão experiências reais de transformação, posicionamento e impacto. Prepare-se para insights que vão além da teoria!
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+      <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img src="/convidado1.jpg" alt="Dra. Sylvia Oliveira" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
+        <h3 style="color: #003366; margin-bottom: 5px;">Dra. Sylvia Oliveira</h3>
+        <p style="font-size: 0.95em; color: #555;">Médica e especialista em saúde mental corporativa, referência há mais de 30 anos na transformação de culturas organizacionais</p>
+      </div>
+
+      <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img src="/convidado2.jpg" alt="Alessandra Miura" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
+        <h3 style="color: #003366; margin-bottom: 5px;">Alessandra Miura</h3>
+        <p style="font-size: 0.95em; color: #555;">Especialista em liderança inovadora e humanizada a mais de 20 anos, reconhecida por alinhar estratégia, empatia e excelência na experiência de colaboradores e clientes.</p>
+      </div>
+
+      <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img src="/convidado3.jpg" alt="Nayana Nascimento" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
+        <h3 style="color: #003366; margin-bottom: 5px;">Nayana Nascimento</h3>
+        <p style="font-size: 0.95em; color: #555;">Digital Marketing | Brand Awareness | Innovation | Strategy</p>
+      </div>
+
+      <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <img src="/convidado4.jpg" alt="Luciana Lucena" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
+        <h3 style="color: #003366; margin-bottom: 5px;">Luciana Lucena</h3>
+        <p style="font-size: 0.95em; color: #555;">Analista de Estratégia e Organização. Business Partner. Especialista em T&D/DHO. Psicóloga. Doutora em Psicologia Social, do Trabalho e das Organizações (UnB)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios / Bônus -->
+  <section class="section" style="background: #fff9e6; padding: 60px 20px;">
+    <h2 style="text-align: center; color: #e67e00; font-size: 2.2em;">Você está a um passo de liderar com essência!</h2>
+    <p style="max-width: 800px; margin: 20px auto 40px; font-size: 1.1em; text-align: center; color: #333;">
+      Imagine tomar decisões com clareza, comunicar com autoridade, inspirar sua equipe e deixar uma marca única por onde passar. O Método <strong>E.S.S.Ê.N.C.I.A.™</strong> é o caminho para líderes que não aceitam mais viver no automático.
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px;">
+      <div style="background: white; border-left: 6px solid #e67e00; padding: 25px; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="color: #e67e00;">🎁 Bônus 1</h3>
+        <p><strong><a href="/diagnostico.html">Diagnóstico de Perfil com Feedback Personalizado</a></strong><br/> Análise para identificar sua marca pessoal como líder.</p>
+      </div>
+
+      <div style="background: white; border-left: 6px solid #e67e00; padding: 25px; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="color: #e67e00;">🎁 Bônus 2</h3>
+        <p><strong>Planner Digital da Essência</strong><br/> Organize seus pilares com foco, metas e consistência em uma ferramenta prática.</p>
+      </div>
+
+      <div style="background: white; border-left: 6px solid #e67e00; padding: 25px; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="color: #e67e00;">🎁 Bônus 3</h3>
+        <p><strong>Comunidade Seleta no WhatsApp</strong><br/> Conexão com líderes de diversos segmentos + mentorias em grupo.</p>
+      </div>
     </div>
 
-    <!-- Convidado 3 -->
-    <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img src="convidado3.jpg" alt="Nayana Nascimento" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
-      <h3 style="color: #003366; margin-bottom: 5px;">Nayana Nascimento</h3>
-      <p style="font-size: 0.95em; color: #555;">Digital Marketing | Brand Awareness | Innovation | Strategy</p>
-    </div>
-  
- <!-- Convidado 4 -->
-    <div style="max-width: 280px; background: #f5f5f5; border-left: 6px solid #005599; border-radius: 10px; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <img src="convidado4.jpg" alt="Luciana Lucena" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 15px;" />
-      <h3 style="color: #003366; margin-bottom: 5px;">Luciana Lucena</h3>
-      <p style="font-size: 0.95em; color: #555;">Analista de Estratégia e Organização. Business Partner. Especialista em T&D/DHO. Psicóloga. Doutora em Psicologia Social, do Trabalho e das Organizações (UnB)</p>
+    <div style="max-width: 800px; margin: 0 auto 30px; background: #fff; border-left: 6px solid #2e7d32; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <h3 style="color: #2e7d32;">✅ Garantia Incondicional de 7 Dias</h3>
+      <p style="color: #333; font-size: 1.05em;">Se em até 7 dias você sentir que o método não fez sentido para você, basta enviar um e-mail e devolvemos 100% do valor. Sem letras miúdas, sem perguntas. Essa é a minha confiança no que construí.</p>
     </div>
 
-
-</section>
-
-
-  <section class="section">
-  <h2>Este método é para você que:</h2>
-  <div class="paraquem">
-    <div>Quer se posicionar com autoridade no seu mercado</div>
-    <div>Sente que tem potencial, mas falta clareza e direção</div>
-    <div>É líder, empreendedor ou profissional em busca de mais propósito</div>
-    <div>Quer comunicar seu valor de forma estratégica e humana</div>
-    <div>Deseja unir identidade, presença e impacto real na liderança</div>
-    <div>Está pronto para liderar com verdade, visão e valor</div>
-  </div>
-</section>
-
-<section class="section" style="background: #f0f4f8; padding: 60px 20px;">
-  <h2 style="text-align: center; color: #003366; font-size: 2em;">Líderes que já viveram essa transformação</h2>
-  <p style="text-align: center; max-width: 700px; margin: 10px auto 40px; font-size: 1.1em; color: #444;">
-    Veja o que líderes, empreendedores e consultores dizem após aplicarem o Método <strong>E.S.S.Ê.N.C.I.A.™</strong>:
-  </p>
-
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-    
-    <!-- Depoimento 1 -->
-    <div style="background: white; border-left: 6px solid #005599; border-radius: 12px; padding: 25px; max-width: 320px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); text-align: center;">
-      <img src="Camilatorres.png" alt="Camila Torres" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 3px solid #ffcc00; margin-bottom: 15px;" />
-      <p style="font-style: italic; color: #333;">“Me reencontrei como líder. Hoje sou mais confiante, clara e com visão estratégica do meu impacto.”</p>
-      <p><strong>Camila Torres</strong><br/><small>Gerente de Projetos – SP</small></p>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#inscricao" class="btn-cta" style="background: #e67e00; color: white; font-size: 1.2em;">Sim, eu quero minha Essência de Líder!</a>
+      <p style="margin-top: 10px; color: #777;">Vagas limitadas – Próxima turma com início em <strong>13 de Agosto</strong></p>
     </div>
+  </section>
 
-    <!-- Depoimento 2 -->
-    <div style="background: white; border-left: 6px solid #005599; border-radius: 12px; padding: 25px; max-width: 320px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); text-align: center;">
-      <img src="Rafaellima.png" alt="Rafael Lima" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 3px solid #ffcc00; margin-bottom: 15px;" />
-      <p style="font-style: italic; color: #333;">“Minha presença online se transformou. Passei de inseguro a autoridade na minha área.”</p>
-      <p><strong>Rafael Lima</strong><br/><small>Empreendedor Digital – RJ</small></p>
-    </div>
+  <!-- Formulário -->
+  <section id="inscricao" class="section" style="background: #ffffff; padding: 60px 20px; text-align: center;">
+    <h2 style="color: #003366; margin-bottom: 20px;">Quero Aplicar o Método!</h2>
+    <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1.1em;">
+      Preencha os dados abaixo e dê o primeiro passo rumo à liderança com propósito e identidade.
+    </p>
 
-    <!-- Depoimento 3 -->
-    <div style="background: white; border-left: 6px solid #005599; border-radius: 12px; padding: 25px; max-width: 320px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); text-align: center;">
-      <img src="Julianamendes.png" alt="Juliana Mendes" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 3px solid #ffcc00; margin-bottom: 15px;" />
-      <p style="font-style: italic; color: #333;">“Não é só conteúdo, é clareza, reposicionamento e um plano de ação real. Um divisor de águas.”</p>
-      <p><strong>Juliana Mendes</strong><br/><small>Consultora Organizacional – DF</small></p>
-    </div>
+    <form
+      id="form-essencia"
+      action="https://formspree.io/f/xzzgalyw"
+      method="POST"
+      style="max-width: 500px; margin: 0 auto; text-align: left; background: #f5f5f5; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);"
+    >
+      <label for="name" style="font-weight: bold;">Nome Completo:</label><br/>
+      <input type="text" id="name" name="nome" required style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc;" /><br/>
 
-  </div>
-</section>
+      <label for="phone" style="font-weight: bold;">Telefone com DDD:</label><br/>
+      <input type="tel" id="phone" name="telefone" placeholder="(99) 91234-5678" required style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc;" /><br/>
 
+      <label for="email" style="font-weight: bold;">E-mail:</label><br/>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc;" /><br/>
 
-<section class="section" style="background: #fff9e6; padding: 60px 20px;">
-  <h2 style="text-align: center; color: #e67e00; font-size: 2.2em;">Você está a um passo de liderar com essência!</h2>
-  <p style="max-width: 800px; margin: 20px auto 40px; font-size: 1.1em; text-align: center; color: #333;">
-    Imagine tomar decisões com clareza, comunicar com autoridade, inspirar sua equipe e deixar uma marca única por onde passar. O Método <strong>E.S.S.Ê.N.C.I.A.™</strong> é o caminho para líderes que não aceitam mais viver no automático.
-  </p>
+      <button type="submit" style="background: #ffcc00; color: #1e1e1e; padding: 12px 25px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer;">
+        Enviar e Ir para o Pagamento
+      </button>
+    </form>
+  </section>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px;">
-    
-   <!-- BÔNUS 1 -->
-    <div style="background: white; border-left: 6px solid #e67e00; padding: 25px; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      <h3 style="color: #e67e00;">🎁 Bônus 1</h3>
-      <p><strong> <a href="diagnostico.html">Diagnóstico de Perfil com Feedback Personalizado</strong><br/> Análise para identificar sua marca pessoal como líder.</a></p>
-    </div>
-
-    <!-- BÔNUS 2 -->
-    <div style="background: white; border-left: 6px solid #e67e00; padding: 25px; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      <h3 style="color: #e67e00;">🎁 Bônus 2</h3>
-      <p><strong>Planner Digital da Essência</strong><br/> Organize seus pilares com foco, metas e consistência em uma ferramenta prática.</p>
-    </div>
-
-    <!-- BÔNUS 3 -->
-    <div style="background: white; border-left: 6px solid #e67e00; padding: 25px; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      <h3 style="color: #e67e00;">🎁 Bônus 3</h3>
-      <p><strong>Comunidade Seleta no WhatsApp</strong><br/> Conexão com líderes de diversos segmentos + mentorias em grupo.</p>
-    </div>
-  </div>
-
-  <div style="max-width: 800px; margin: 0 auto 30px; background: #fff; border-left: 6px solid #2e7d32; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    <h3 style="color: #2e7d32;">✅ Garantia Incondicional de 7 Dias</h3>
-    <p style="color: #333; font-size: 1.05em;">Se em até 7 dias você sentir que o método não fez sentido para você, basta enviar um e-mail e devolvemos 100% do valor. Sem letras miúdas, sem perguntas. Essa é a minha confiança no que construí.</p>
-  </div>
-
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="#inscricao" class="btn-cta" style="background: #e67e00; color: white; font-size: 1.2em;">Sim, eu quero minha Essência de Líder!</a>
-    <p style="margin-top: 10px; color: #777;">Vagas limitadas – Próxima turma com início em <strong>13 de Agosto</strong></p>
-  </div>
-</section>
-
-<section id="inscricao" class="section" style="background: #ffffff; padding: 60px 20px; text-align: center;">
-  <h2 style="color: #003366; margin-bottom: 20px;">Quero Aplicar o Método!</h2>
-  <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1.1em;">
-    Preencha os dados abaixo e dê o primeiro passo rumo à liderança com propósito e identidade.
-  </p>
-
- <form
-  id="form-essencia"
-  action="https://formspree.io/f/xzzgalyw"
-  method="POST"
-  style="max-width: 500px; margin: 0 auto; text-align: left; background: #f5f5f5; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);"
->
-  <label for="name" style="font-weight: bold;">Nome Completo:</label><br/>
-  <input type="text" id="name" name="nome" required style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc;" /><br/>
-
-  <label for="phone" style="font-weight: bold;">Telefone com DDD:</label><br/>
-  <input type="tel" id="phone" name="telefone" placeholder="(99) 91234-5678" required style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc;" /><br/>
-
-  <label for="email" style="font-weight: bold;">E-mail:</label><br/>
-  <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc;" /><br/>
-
-  <button type="submit" style="background: #ffcc00; color: #1e1e1e; padding: 12px 25px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer;">
-    Enviar e Ir para o Pagamento
-  </button>
-</form>
-
-<script>
-  document.getElementById('form-essencia').addEventListener('submit', async function(event) {
-    event.preventDefault();
-
-    const form = event.target;
-    const formData = new FormData(form);
-
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      window.location.href = 'https://loja.infinitepay.io/jlinfinity/qcu7198-imersao-metodo-essencia';
-    } else {
-      alert('Ocorreu um erro ao enviar suas informações. Tente novamente.');
-    }
-  });
-</script>
-
-<!-- SCRIPT DE MÁSCARA DINÂMICA PARA O TELEFONE -->
-<script>
-  document.getElementById('telefone').addEventListener('input', function (e) {
-    let valor = e.target.value.replace(/\D/g, '');
-
-    if (valor.length > 11) valor = valor.slice(0, 11);
-
-    if (valor.length <= 2) {
-      valor = `(${valor}`;
-    } else if (valor.length <= 7) {
-      valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-    } else {
-      valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
-    }
-
-    e.target.value = valor;
-  });
-</script>
-
-  <footer style="text-align:center; padding:30px; background:#003366; color:white;">
+  <footer>
     <p>© 2025 - Método E.S.S.Ê.N.C.I.A.™ • Criado por Jailson Lima</p>
   </footer>
 
+  <!-- Scripts: contador, "líderes" e máscara -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const countdownEl = document.getElementById("countdown");
-      const lideresEl = document.getElementById("lideres");
+    document.addEventListener('DOMContentLoaded', function () {
+      // DEADLINE DO CONTADOR (3/9/2025 23:59:59)
+      const deadline = new Date('2025-09-03T23:59:59').getTime();
 
-      const targetTime = new Date().getTime() + 72 * 60 * 60 * 1000;
+      const diasEl = document.getElementById('dias');
+      const horasEl = document.getElementById('horas');
+      const minutosEl = document.getElementById('minutos');
+      const segundosEl = document.getElementById('segundos');
+      const lideresEl = document.getElementById('lideres');
 
-      function atualizarContagem() {
-        const now = new Date().getTime();
-        const restante = targetTime - now;
+      function updateCountdown() {
+        const now = Date.now();
+        const t = deadline - now;
 
-        if (restante < 0) {
-          countdownEl.innerHTML = "00h 00m 00s";
+        if (t <= 0) {
+          diasEl.textContent = '00';
+          horasEl.textContent = '00';
+          minutosEl.textContent = '00';
+          segundosEl.textContent = '00';
           return;
         }
+        const dias = Math.floor(t / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((t % (1000 * 60)) / 1000);
 
-        const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((restante % (1000 * 60)) / 1000);
-
-        countdownEl.innerHTML = `${String(horas).padStart(2, "0")}h ${String(minutos).padStart(2, "0")}m ${String(segundos).padStart(2, "0")}s`;
+        diasEl.textContent = String(dias).padStart(2, '0');
+        horasEl.textContent = String(horas).padStart(2, '0');
+        minutosEl.textContent = String(minutos).padStart(2, '0');
+        segundosEl.textContent = String(segundos).padStart(2, '0');
       }
 
-      let lideres = 9;
+      // "Líderes confirmados" (simulação)
+      let lideres = Number(lideresEl?.innerText || 9);
       function atualizarLideres() {
         lideres++;
-        lideresEl.innerText = lideres;
+        if (lideresEl) lideresEl.innerText = String(lideres);
       }
 
-      setInterval(atualizarContagem, 1000);
+      // Máscara de telefone
+      const phone = document.getElementById('phone');
+      if (phone) {
+        phone.addEventListener('input', function (e) {
+          let v = e.target.value.replace(/\D/g, '');
+          if (v.length > 11) v = v.slice(0, 11);
+          if (v.length <= 2) v = `(${v}`;
+          else if (v.length <= 7) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+          else v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+          e.target.value = v;
+        });
+      }
+
+      // Envio do formulário (fetch + redirect)
+      const form = document.getElementById('form-essencia');
+      if (form) {
+        form.addEventListener('submit', async function (event) {
+          event.preventDefault();
+          const formData = new FormData(form);
+          const response = await fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (response.ok) {
+            window.location.href = 'https://loja.infinitepay.io/jlinfinity/qcu7198-imersao-metodo-essencia';
+          } else {
+            alert('Ocorreu um erro ao enviar suas informações. Tente novamente.');
+          }
+        });
+      }
+
+      // Start loops
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
       setInterval(atualizarLideres, 420000);
-      lideresEl.innerText = lideres;
     });
   </script>
-
-
-
-   <div aling="Center"> <div>
-  </header>
-
 </body>
 </html>
